@@ -1,0 +1,11 @@
+I made the .ino firmware file of the SCT013 sensor to collect the data and send the data read from the sensor through MQTT.
+
+For the following I had to modify the my_user_config.h and the user_config_override.h file of the Tasmota library.
+
+The data reading is done via RMS(Root Mean Square Method) As it will be inaccurate to calculating the Oscilating values of AC current.
+further more callibration and tweaking of the sensor accuracy is needed. Displays data at a delay of 1 second.
+
+Currently the Firmware only supports MQTT.
+
+
+
