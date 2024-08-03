@@ -1,3 +1,6 @@
+#ifdef USE_I2C
+#ifdef USE_SCT013
+
 #include <wire.h>
 #include <Adafruit_ADS1015.h>
 
@@ -9,6 +12,11 @@ void setup()
   Serial.begin(9600);
   ads.setGain(GAIN_TWO);
   ads.begin();
+}
+
+void SCT013Init(){
+  ads.setGain(GAIN_TWO);
+  ads.begin()
 }
 
 float getCurrentRMS()
@@ -39,3 +47,20 @@ void loop()
   MQTT_telemetry(telemetry);
   delay(1000);
 }
+
+bool Xsns20(uint8_t function) {
+  switch (function) {
+    case FUNC_INIT:
+      SCT013Init();
+      break;
+    case FUNC_LOOP:
+      SCT013Loop();
+      break;
+    default:
+      break;
+  }
+  return true;
+}
+
+#endif
+#endif
