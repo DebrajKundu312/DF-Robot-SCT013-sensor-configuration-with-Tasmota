@@ -4,7 +4,8 @@ The settings and configuration of the Tasmota firmware to support the CT Non-inv
 
 \\\\\\\\\\\\
 Firstly set the Wifi network configuration 
-\*SSID 1
+\*
+SSID 1
 Password 1
 SSID 2
 Password 2
